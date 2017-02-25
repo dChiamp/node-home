@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.light-status {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+
+.relay-status {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: red;
+}

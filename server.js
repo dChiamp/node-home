@@ -6,6 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var hbs = require('handlebars');
+// Johnny Five 
+var boardInit = require('./boardInit')
+
+
 
 // EXPRESS GEN DEFAULTS
 // var users = require('./routes/users');
@@ -79,6 +83,10 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+// initialize board
+boardInit()
 
 
 module.exports = app;

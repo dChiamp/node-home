@@ -102,4 +102,25 @@ $( document ).ready(function() {
   });
 
 
+  $('#test').on('click', function() {
+      console.log("clicked test");
+
+      $.ajax({
+         type: 'GET',
+         url: '/api/test',
+         data:  JSON.stringify({'servo': 'on'}),
+         error: function() {
+           console.log("error")
+         },
+           contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+         success: function(data) {
+          console.log("success", data)
+         }
+      });
+
+
+  });
+
+
 });

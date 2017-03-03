@@ -7,18 +7,24 @@ a {
   color: #00B7FF;
 }
 
+.title-container { margin-bottom: 2rem; }
+
+#servo {  margin-bottom: 2rem; }
 
 .light-status {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   background-color: red;
+  display: inline-block;
 }
 
+#relay {  margin-bottom: 2rem; }
 
 .relay-status {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   background-color: red;
+  display: inline-block;
 }

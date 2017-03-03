@@ -3,56 +3,75 @@
   
 <head>
 
-
   <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous"></script>
 
-
-    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js" integrity="sha256-IZcV0C0I1dS0/ygfO3lToRPhj+1PbFqYtK/cMb/cJLY=" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" integrity="sha256-Gxk756LCcjwUNjIrkNrXNqY1Q+EW/Tct/IuGRw6Q1Mo=" crossorigin="anonymous" />
 
 </head>
 <body>
-  <h1>Open Sesame</h1>
 
-  <div id="servo">
-    
-    <h3>Light State: <span id="light-state">Off</span></h3>
-    <div class="light-status"></div>
+  <div class="title-container text-center">
+    <h1>Open Sesame</h1>
+  </div>
 
-    <div class="light">
-      <button id="servo-on">Light On</button>
-      <button id="servo-off">Light Off</button>
+  <hr>
+
+  <section id="servo">
+    <div class="row">
+      <div class="columns small-10 small-centered  text-center">
+        
+
+        
+        <h3>Light State: <span id="light-state">Off</span></h3>
+
+        <div class="status-container">
+          <div class="light-status"></div>
+        </div>
+
+        <div class="light">
+          <button class="button" id="servo-on">Light On</button>
+          <button class="button" id="servo-off">Light Off</button>
+        </div>
+
+      </div>
     </div>
-  </div>
-
-  <div class="relay">
+  </section>
 
 
-    <h3>Door State: <span id="relay-state">Closed</span></h3>
-    <div class="relay-status"></div>
-    
-    <div class="door">
-      <button id="relay-on">Door Open</button>
-      <button id="relay-off">Door Close</button>
+  <section id="relay">
+
+    <div class="row">
+      <div class="columns small-10 small-centered text-center">
+        
+        <h3>Door State: <span id="relay-state">Closed</span></h3>
+
+        <div class="status-container">
+          <div class="relay-status"></div>
+        </div>
+        
+        <div class="door">
+          <button class="button" id="relay-on">Door Open</button>
+          <button class="button" id="relay-off">Door Close</button>
+        </div>
+
+      </div>
     </div>
 
-  </div>
+  </section>
 
-  <div class="test">
-    <button id="test">TEST</button>
-  </div>
+
+  <footer>
+  <script type="text/javascript" src="/javascripts/node-home.js"> </script>
+    
+  </footer>
 
 
 </body>
-
-
-<footer>
-<script type="text/javascript" src="/javascripts/node-home.js"> </script>
-  
-</footer>
-
-
 
 </html>

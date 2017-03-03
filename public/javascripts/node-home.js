@@ -6,21 +6,21 @@ $( document ).ready(function() {
     console.log("clicked on");
 
     $.ajax({
+       type: 'GET',
        url: '/api/servo/on',
-       data: {
-          format: 'json'
-       },
+       // data: {
+       //    format: 'json'
+       // },
        error: function() {
          console.log("error")
        },
-       // dataType: 'jsonp',
+       dataType: 'json',
        success: function(data) {
         console.log("success", data)
         $('.light-status').css('background-color', 'green')
         $('#light-state').html('On')
 
-       },
-       type: 'GET'
+       }
     });
 
   })
@@ -29,10 +29,11 @@ $( document ).ready(function() {
       console.log("clicked off");
 
       $.ajax({
+         type: 'GET',
          url: '/api/servo/off',
-         data: {
-            format: 'json'
-         },
+         // data: {
+         //    format: 'json'
+         // },
          error: function() {
            console.log("error")
          },
@@ -42,8 +43,7 @@ $( document ).ready(function() {
           $('.light-status').css('background-color', 'red')
           $('#light-state').html('Off')
 
-         },
-         type: 'GET'
+         }
       });
 
 
@@ -57,21 +57,33 @@ $( document ).ready(function() {
     console.log("clicked on");
 
     $.ajax({
+      type: 'GET',
        url: '/api/relay/open',
-       data: {
-          format: 'json'
-       },
+       // data: {
+       //    format: 'json'
+       // },
        error: function() {
          console.log("error")
        },
        // dataType: 'jsonp',
        success: function(data) {
         console.log("success", data)
-          $('.relay-status').css('background-color', 'green')
-          $('#relay-state').html('On')
+          var state;
+          var doorColor;
+          if (data == 'on') {
+             state = 'Open';
+             doorColor = 'green';
+          } else if ( data = 'off ') {
+             state = 'Closed';
+             doorColor = 'red';
+          } else {
+            state = 'Eroor';
+          }
 
-       },
-       type: 'GET'
+          $('.relay-status').css('background-color', doorColor)
+          $('#relay-state').html(state)
+
+       }
     });
 
   })
@@ -80,47 +92,45 @@ $( document ).ready(function() {
       console.log("clicked off");
 
       $.ajax({
+        type: 'GET',
          url: '/api/relay/close',
-         data: {
-            format: 'json'
-         },
+         // data: {
+         //    format: 'json'
+         // },
          error: function() {
            console.log("error")
          },
          // dataType: 'jsonp',
          success: function(data) {
           console.log("success", data)
-          $('.relay-status').css('background-color', 'red')
-          $('#relay-state').html('Off')
+          var state;
+          var doorColor;
+          if (data == 'on') {
+             state = 'Open';
+             doorColor = 'green';
+          } else if ( data = 'off ') {
+             state = 'Closed';
+             doorColor = 'red';
+          } else {
+            state = 'Eroor';
+          }
+
+          $('.relay-status').css('background-color', doorColor)
+          $('#relay-state').html(state)
 
 
-         },
-         type: 'GET'
-      });
-
-
-  });
-
-
-  $('#test').on('click', function() {
-      console.log("clicked test");
-
-      $.ajax({
-         type: 'GET',
-         url: '/api/test',
-         data:  JSON.stringify({'servo': 'on'}),
-         error: function() {
-           console.log("error")
-         },
-           contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-         success: function(data) {
-          console.log("success", data)
          }
       });
 
 
   });
+
+
+
+
+
+
+ 
 
 
 });

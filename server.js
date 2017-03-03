@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var hbs = require('handlebars');
 // Johnny Five 
-var boardInit = require('./boardInit')
+var initBoard = require('./initBoard')
 
 
 
@@ -86,7 +86,7 @@ app.use(function(err, req, res, next) {
 
 
 // initialize board
-boardInit()
+initBoard()
 
 
 module.exports = app;

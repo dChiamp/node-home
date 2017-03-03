@@ -15,12 +15,9 @@ var relayController = {
     var relayCommand = doorState[relayState];
 
     console.log('relayCommand: ', relayCommand);
-
-    if ( relayCommand === 'on' ) { relay.on(); }
-    if ( relayCommand == 'off') {  relay.off(); }
-
-
-
+    // state is reversed!
+    if ( relayCommand === 'on' ) { relay.off(); }
+    if ( relayCommand == 'off') {  relay.on(); }
 
     res.json(relayCommand);
 

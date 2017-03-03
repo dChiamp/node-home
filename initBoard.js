@@ -3,17 +3,21 @@ var board = new five.Board();
 
 // init board
 
-function boardInit() {
+function initBoard() {
 
   board.on("ready", function() {
-    relay = new five.Relay(11);
     // var led = new five.Led(13);
+    
+    relay = new five.Relay({
+      pin: 11,
+      type: "NC",
+      inOn: 'false'
+    });
 
     servo = new five.Servo({
-     pin: 10, 
-     // range: [ 0, 180 ],
-     // startAt: 120
+     pin: 10
     });
+
 
 
     /* OPTIONAL
@@ -27,4 +31,4 @@ function boardInit() {
 
 }
 
-module.exports = boardInit;
+module.exports = initBoard;

@@ -1,5 +1,5 @@
-var five = require("johnny-five");
-var board = new five.Board();
+// var five = require("johnny-five");
+// var board = new five.Board();
 
 
 var doorState = {

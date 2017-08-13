@@ -5,9 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var hbs = require('handlebars');
+var hbs = require('handlebars');nod
 // Johnny Five 
-var initBoard = require('./initBoard')
+// var initBoard = require('./initBoard')
 
 
 
@@ -86,7 +86,7 @@ app.use(function(err, req, res, next) {
 
 
 // initialize board
-initBoard()
+// initBoard()
 
 
 module.exports = app;

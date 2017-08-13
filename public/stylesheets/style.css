@@ -9,22 +9,9 @@ a {
 
 .title-container { margin-bottom: 2rem; }
 
-#servo {  margin-bottom: 2rem; }
 
-.light-status {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background-color: red;
-  display: inline-block;
-}
+#color-container div {height: 10rem; width: 10rem; }
 
-#relay {  margin-bottom: 2rem; }
-
-.relay-status {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background-color: red;
-  display: inline-block;
-}
+#red  {background-color: red; }
+#yellow  {background-color: yellow; }
+#green  {background-color: green; }

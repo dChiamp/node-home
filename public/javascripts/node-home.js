@@ -126,6 +126,73 @@ $( document ).ready(function() {
   });
 
 
+  var stationIds = {
+    'chinaTown': 80410,
+    'southwestMuseum': 80413
+  }
+
+  var destinations = {
+    "804_0_var0": 'asuza / citrus',
+    "804_1_var0": 'Atlantic'
+  }
+
+  var globalStationId;
+
+  $('#station-select').on('change', function() {
+    var stationId = $(this).val();
+    globalStationId = stationId
+    console.log("globalStationId", globalStationId);
+
+  });
+
+  $('#get-times').on('click', function() {
+
+      if (globalStationId != undefined ) {
+
+        var url = `/api/rail/${globalStationId}`
+
+        console.log("url", url);
+
+        $.ajax({
+          type: 'GET',
+           url: url,
+           error: function() {
+             console.log("error")
+           },
+           // dataType: 'jsonp',
+           success: function(data) {
+            console.log("success", data)
+            parseData(data.items)
+
+           }
+        });
+
+      } else {
+        console.log("select a station")
+      }
+
+  });
+
+function parseData (data) {
+  console.log("parseData: ", data)
+  for ( var i = 0; i < data.length; i++ ) {
+    
+    var stop = data[i]
+    var direction = stop['run_id']
+
+    var destination = destinations[direction]
+    var minutes = stop['minutes']
+
+    console.log("destination: ", destination, "minutes: ", minutes);
+
+    $('#stop-info').append("<li> destination: " + destination + " departing in: " + minutes+ "</li>")
+
+
+  }
+
+}
+
+
 
 
 

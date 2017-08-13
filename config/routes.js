@@ -6,6 +6,7 @@ var methodOverride = require('method-override')
 
 var servoController = require('../controllers/servoController');
 var relayController = require('../controllers/relayController');
+var railController = require('../controllers/railController');
 
 router.route('/api/servo/:servoPosition')
   .get(servoController.moveServo)
@@ -13,6 +14,8 @@ router.route('/api/servo/:servoPosition')
 router.route('/api/relay/:relayState')
   .get(relayController.changeRelayState)
 
+router.route('/api/rail/:route')
+  .get(railController.getDepartureInfo)
 
 
 
